@@ -54,7 +54,8 @@ class Student
     sql = <<-SQL
     SELECT COUNT(*)
     FROM students
-    WHERE grade = 10;
+    WHERE grade = 10
+    ORDER BY student.id LIMIT 1;
   SQL
 
   DB[:conn].execute(sql).map do |row|
